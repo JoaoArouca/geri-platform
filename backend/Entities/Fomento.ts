@@ -160,7 +160,7 @@ export class Fomento {
         return this.props.areasOrtechnologies;
     }
 
-    get stalastReleasetus(): Date {
+    get lastRelease(): Date {
         return this.props.lastRelease;
     }
 }
