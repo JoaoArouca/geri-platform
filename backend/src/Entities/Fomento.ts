@@ -1,4 +1,7 @@
+import { uuid } from "uuidv4"
+
 export interface IFomento {
+    id?: string
     countries: string | string[]
     region: string | string[]
     institution: string
@@ -35,8 +38,11 @@ export interface IFomento {
 export class Fomento {
     props: IFomento;
 
-    constructor(props: IFomento) {
+    constructor(props: Omit<IFomento, 'id'>, id?: string) {
         this.props = props;
+        if (!id) {
+            this.props.id = uuid();
+        }
         // needs validations
     }
 
