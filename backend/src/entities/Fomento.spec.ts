@@ -35,7 +35,9 @@ describe("Test Fomento Class", () => {
             status: 'Ativo',
             areasOrtechnologies: ['Inteligência Artificial', 'Deep learning', 'IoT'],
             lastRelease: new Date(),
-        })
+        });
+
+        console.log(fomento);
 
         expect(fomento).toBeInstanceOf(Fomento)
         expect(fomento.institution).toBe('BNDES')
