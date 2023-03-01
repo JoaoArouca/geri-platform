@@ -74,7 +74,7 @@ export class CreateFomentoController {
                 lastRelease
             });
 
-            return res.status(201).send(req.body);
+            return res.status(201).json(req.body);
         } catch (err) {
             return res.status(400).json()
         }
