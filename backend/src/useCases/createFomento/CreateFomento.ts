@@ -9,7 +9,9 @@ export class CreateFomento {
     ) { }
 
     async execute(data: ICreateFomentoRequestDTO) {
-        const fomentoAlreadyExists = await this.fomentoRepository.findByCall(data.call);
+        console.log("Service");
+        
+        const fomentoAlreadyExists = await this.fomentoRepository.findByTitle(data.title);
 
         if (fomentoAlreadyExists) {
             throw new Error("Fomento already exists");
@@ -18,5 +20,7 @@ export class CreateFomento {
         const fomento = new Fomento(data);
 
         await this.fomentoRepository.save(fomento);
+        
+        return fomento;
     }
 }

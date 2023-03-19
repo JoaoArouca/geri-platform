@@ -7,7 +7,10 @@ export class CreateFomentoController {
     ) { }
 
     async handle(req: Request, res: Response): Promise<Response> {
-        const { countries,
+        
+        const {
+            title,
+            countries,
             region,
             institution,
             program,
@@ -36,11 +39,14 @@ export class CreateFomentoController {
             link,
             abgiInterest,
             status,
-            areasOrtechnologies,
+            technologies,
             lastRelease } = req.body;
 
         try {
-            await this.createFomento.execute({
+            console.log("controller");
+            
+            const newFomento = await this.createFomento.execute({
+                title,
                 countries,
                 region,
                 institution,
@@ -70,11 +76,11 @@ export class CreateFomentoController {
                 link,
                 abgiInterest,
                 status,
-                areasOrtechnologies,
+                technologies,
                 lastRelease
             });
 
-            return res.status(201).json(req.body);
+            return res.status(201).json(newFomento);
         } catch (err) {
             return res.status(400).json()
         }

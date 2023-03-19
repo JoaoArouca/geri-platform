@@ -4,22 +4,23 @@ import { describe, expect, it } from 'vitest'
 describe("Test Fomento Class", () => {
     it("should be able to create a new Fomento", () => {
         const fomento = new Fomento({
-            countries: 'Brasil',
-            region: 'Nacional',
+            countries: ['Brasil'],
+            title: 'teste 1', 
+            region: ['Nacional'],
             institution: 'BNDES',
             program: 'Financiamento',
             call: 'Financiamento x',
             supportType: 'Recursos reembolsável',
-            organizations: 'Todas',
-            sector: 'TI',
+            organizations: ['Todas'],
+            sector: ['TI'],
             requiresPartner: false,
-            partnerType: 'Não se aplica',
+            partnerType: ['Não se aplica'],
             TRLmin: 'Não especificado',
             TRLmax: 'Não especificado',
             term: 'Não especificado',
             objective: 'Do something great',
             elegibility: 'Todo tipo de Empresa',
-            expenses: 'Gastos patronais, diárias, equipamentos',
+            expenses: ['Gastos patronais, diárias', 'equipamentos'],
             minValueReembolsaveis: 'Não especificado',
             maxValueReembolsaveis: 'Não especificado',
             minValueSubvencao: 'Não se aplica',
@@ -33,11 +34,9 @@ describe("Test Fomento Class", () => {
             link: 'Some Link here',
             abgiInterest: true,
             status: 'Ativo',
-            areasOrtechnologies: ['Inteligência Artificial', 'Deep learning', 'IoT'],
+            technologies: ['Inteligência Artificial', 'Deep learning', 'IoT'],
             lastRelease: new Date(),
         });
-
-        console.log(fomento);
 
         expect(fomento).toBeInstanceOf(Fomento)
         expect(fomento.institution).toBe('BNDES')
