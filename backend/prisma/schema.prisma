@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Fomento {
+  id                    String         @id @default(cuid())
+  title                 String         //@unique
+  countries             String[]
+  region                String[]
+  institution           String
+  program               String
+  call                  String
+  supportType           String
+  organizations         String[]
+  sector                String[]
+  requiresPartner       Boolean?       @default(false)
+  partnerType           String[]
+  TRLmin                String?
+  TRLmax                String?
+  technologies          String[]
+  term                  String         
+  objective             String
+  elegibility           String
+  expenses              String[]
+  minValueReembolsaveis String?
+  maxValueReembolsaveis String?
+  minValueSubvencao     String?
+  maxValueSubvencao     String?
+  supportTax            String?
+  duration              String?
+  tax                   String?
+  shortage              String?
+  amortization          String?
+  isESG                 Boolean?       @default(false)
+  link                  String
+  abgiInterest          Boolean?       @default(false)
+  status                String
+  lastRelease           DateTime?
+
+  @@map("fomento")
+}
