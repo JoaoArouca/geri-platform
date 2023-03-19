@@ -1,0 +1,11 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Global Funding Database",
+        "description": "Global Funding Database",
+        "version": "1.0.0",
+        "contact": {
+            "email": "jarouca21@gmail.com"
+        }
+    }
+}
