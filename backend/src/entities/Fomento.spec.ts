@@ -5,7 +5,7 @@ describe("Test Fomento Class", () => {
     it("should be able to create a new Fomento", () => {
         const fomento = new Fomento({
             countries: ['Brasil'],
-            title: 'teste 1', 
+            title: 'teste 1',
             region: ['Nacional'],
             institution: 'BNDES',
             program: 'Financiamento',
@@ -35,7 +35,7 @@ describe("Test Fomento Class", () => {
             abgiInterest: true,
             status: 'Ativo',
             technologies: ['Inteligência Artificial', 'Deep learning', 'IoT'],
-            lastRelease: new Date(),
+            lastRelease: new Date().toString(),
         });
 
         expect(fomento).toBeInstanceOf(Fomento)

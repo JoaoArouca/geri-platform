@@ -2,7 +2,7 @@ import { PrismaClient, Prisma } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
-const data: Prisma.UserCreateInput[] = [
+const data: Prisma.FomentoCreateInput[] = [
   {
     countries: "Brasil",
     title: "teste 201",
@@ -56,6 +56,5 @@ main()
   })
   .catch(async (e) => {
     console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
+    await prisma.$disconnect();
   })

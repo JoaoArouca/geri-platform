@@ -30,5 +30,5 @@ export interface ICreateFomentoRequestDTO {
     abgiInterest: boolean
     status: string
     technologies: string[]
-    lastRelease: Date
+    lastRelease: string
 }

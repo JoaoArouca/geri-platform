@@ -33,7 +33,7 @@ export class Fomento {
     abgiInterest: boolean
     status: string
     technologies: string[]
-    lastRelease: Date
+    lastRelease: string
 
     constructor(props: Omit<Fomento, 'id'>, id?: string) {
         Object.assign(this, props);

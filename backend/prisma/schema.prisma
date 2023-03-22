@@ -11,8 +11,8 @@ datasource db {
 }
 
 model Fomento {
-  id                    String         @id @default(cuid())
-  title                 String         //@unique
+  id                    String   @id @default(cuid())
+  title                 String //@unique
   countries             String[]
   region                String[]
   institution           String
@@ -21,12 +21,12 @@ model Fomento {
   supportType           String
   organizations         String[]
   sector                String[]
-  requiresPartner       Boolean?       @default(false)
+  requiresPartner       Boolean? @default(false)
   partnerType           String[]
   TRLmin                String?
   TRLmax                String?
   technologies          String[]
-  term                  String         
+  term                  String
   objective             String
   elegibility           String
   expenses              String[]
@@ -39,11 +39,11 @@ model Fomento {
   tax                   String?
   shortage              String?
   amortization          String?
-  isESG                 Boolean?       @default(false)
+  isESG                 Boolean? @default(false)
   link                  String
-  abgiInterest          Boolean?       @default(false)
+  abgiInterest          Boolean? @default(false)
   status                String
-  lastRelease           DateTime?
+  lastRelease           String
 
   @@map("fomento")
 }
