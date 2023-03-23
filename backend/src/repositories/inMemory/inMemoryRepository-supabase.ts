@@ -14,9 +14,7 @@ export class InMemoryRepositorySupabase implements IFomentoRepository {
     }
 
     async save(fomento: Fomento): Promise<void> {
-        this.prisma.fomento.create({data: fomento});
+        await this.prisma.fomento.create({data: fomento});
         console.log("Created");
-        
     }
-
 }
