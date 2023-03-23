@@ -4,18 +4,18 @@ export interface ICreateFomentoRequestDTO {
     region: string[]
     institution: string
     program: string
-    call: string
+    call: string | null
     supportType: string
     organizations: string[]
     sector: string[]
-    requiresPartner: boolean
+    requiresPartner: boolean | null
     partnerType: string[]
     TRLmin: string
     TRLmax: string
     term: string
     objective: string
     elegibility: string
-    expenses: string[]
+    expenses: string
     minValueReembolsaveis: string
     maxValueReembolsaveis: string
     minValueSubvencao: string

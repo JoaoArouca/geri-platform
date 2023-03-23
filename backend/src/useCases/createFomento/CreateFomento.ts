@@ -9,7 +9,6 @@ export class CreateFomento {
     ) { }
 
     async execute(data: ICreateFomentoRequestDTO) {
-        console.log("Service");
         
         const fomentoAlreadyExists = await this.fomentoRepository.findByTitle(data.title);
 

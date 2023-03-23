@@ -4,23 +4,23 @@ const prisma = new PrismaClient()
 
 const data: Prisma.FomentoCreateInput[] = [
   {
-    countries: "Brasil",
+    countries: ["Brasil"],
     title: "teste 201",
-    region: "['Nacional']",
+    region: ['Nacional'],
     institution: "BNDES",
     program: "Financiamento",
     call: "Financiamento x",
     supportType: "Recursos reembolsável",
     organizations: "['Todas']",
-    sector: "['TI']",
+    sector: ['TI'],
     requiresPartner: false,
-    partnerType: "['Não se aplica']",
+    partnerType: ['Não se aplica'],
     TRLmin: "Não especificado",
     TRLmax: "Não especificado",
     term: "Não especificado",
     objective: "Do something great",
     elegibility: "Todo tipo de Empresa",
-    expenses: "['diárias']",
+    expenses: 'diárias',
     minValueReembolsaveis: "Não especificado",
     maxValueReembolsaveis: "Não especificado",
     minValueSubvencao: "Não se aplica",
@@ -32,9 +32,8 @@ const data: Prisma.FomentoCreateInput[] = [
     amortization: "Não especificado",
     isESG: false,
     link: "Some Link here",
-    abgiInterest: true,
     status: "Ativo",
-    technologies: "['Inteligência Artificial']",
+    technologies: ['Inteligência Artificial'],
     lastRelease: "12/01/2023"
   }
 ]
@@ -42,10 +41,10 @@ const data: Prisma.FomentoCreateInput[] = [
 async function main() {
   console.log(`Start seeding ...`)
   for (const u of data) {
-    const fomento = await prisma.fomento.create({
-      data: u,
+    const funding = await prisma.fomento.create({
+      data: u
     });
-    console.log(`Created user with id: ${fomento.id}`);
+    console.log(`Created user with id: ${funding.id}`);
   }
   console.log(`Seeding finished.`)
 }

@@ -41,10 +41,9 @@ export class CreateFomentoController {
             status,
             technologies,
             lastRelease } = req.body;
+            // Class validator
 
-        try {
-            console.log("controller");
-            
+        try {            
             const newFomento = await this.createFomento.execute({
                 title,
                 countries,

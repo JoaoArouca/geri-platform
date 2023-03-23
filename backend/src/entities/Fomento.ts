@@ -7,18 +7,18 @@ export class Fomento {
     region: string[]
     institution: string
     program: string
-    call: string
+    call: string | null
     supportType: string
     organizations: string[]
     sector: string[]
-    requiresPartner: boolean
+    requiresPartner: boolean | null
     partnerType: string[]
     TRLmin: string
     TRLmax: string
     term: string
     objective: string
     elegibility: string
-    expenses: string[]
+    expenses: string
     minValueReembolsaveis: string
     maxValueReembolsaveis: string
     minValueSubvencao: string
@@ -30,7 +30,6 @@ export class Fomento {
     amortization: string
     isESG: boolean
     link: string
-    abgiInterest: boolean
     status: string
     technologies: string[]
     lastRelease: string
@@ -41,6 +40,5 @@ export class Fomento {
         if (!id) {
             this.id = v4();
         }
-        // needs validations
     }
 }
