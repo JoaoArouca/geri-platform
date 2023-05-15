@@ -14,7 +14,7 @@ datasource db {
 
 model Fund {
   id                    String         @id @default(uuid())
-  title                 String         @unique
+  title                 String 
   countries             Country[]      @relation("fund_country")
   region                Region[]       @relation("fund_region")
   institution           String
