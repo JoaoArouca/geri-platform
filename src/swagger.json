@@ -7,5 +7,36 @@
         "contact": {
             "email": "jarouca21@gmail.com"
         }
+    },
+    "paths": {
+        "/health": {
+            "get": {
+                "summary": "Verificar o estado de saúde da aplicação",
+                "description": "Retorna informações sobre o estado de saúde da aplicação",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/HealthCheckResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "HealthCheckResponse": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "O estado de saúde da aplicação. Deve ser 'UP' se a aplicação estiver funcionando corretamente."
+                },
+                "uptime": {
+                    "type": "number",
+                    "description": "Retorna o tempo de atividade da aplicação em segundos."
+                }
+            }
+        }
     }
 }
