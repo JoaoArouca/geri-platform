@@ -38,4 +38,5 @@ export interface ICreateFundRequestDTO {
   status: string
   lastRelease: string
   observation: string | null
+  key: string
 }

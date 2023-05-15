@@ -1,18 +1,25 @@
 import { Fund } from '../../entities/Fund/Fund'
-import { IFundRepository } from '../FundRepository'
+import { IFundRepositoryTestArea } from '../FundRepository'
 
-export class InMemoryRepositoryCreateFund implements IFundRepository {
+export class InMemoryRepositoryCreateFund implements IFundRepositoryTestArea {
   private localDbForTests: Fund[] = []
 
-  async findByKey(title: string): Promise<Fund> {
-    const fomento = this.localDbForTests.find(
-      (fomento) => fomento.title === title,
-    )
+  findByKey(program: string | null, call: string | null): boolean {
+    if (!program) {
+      program = ''
+    }
 
-    return fomento as Fund
+    const key = program.concat(call === null ? '' : call)
+    const fund = this.localDbForTests.find((fund) => fund.key === key)
+
+    if (fund === null) {
+      return false
+    }
+
+    return true
   }
 
-  async save(fomento: Fund): Promise<void> {
-    this.localDbForTests.push(fomento)
+  save(fund: Fund): void {
+    this.localDbForTests.push(fund)
   }
 }

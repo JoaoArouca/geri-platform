@@ -39,6 +39,7 @@ export class Fund {
   status: string
   lastRelease: string
   observation: string | null
+  key: string
 
   constructor(props: Omit<Fund, 'id'>, id?: string) {
     Object.assign(this, props)
