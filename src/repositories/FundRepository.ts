@@ -1,6 +1,6 @@
 import { Fund } from '../entities/Fund/Fund'
 
 export interface IFundRepository {
-  findByTitle(title: string): Promise<Fund>
+  findByKey(program: string | null, call: string | null): Promise<boolean>
   save(fomento: Fund): Promise<void>
 }

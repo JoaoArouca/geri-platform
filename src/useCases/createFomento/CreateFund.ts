@@ -7,7 +7,10 @@ export class CreateFund {
   constructor(private fundRepository: IFundRepository) {}
 
   async execute(data: ICreateFundRequestDTO) {
-    const fundAlreadyExists = await this.fundRepository.findByTitle(data.title)
+    const fundAlreadyExists = await this.fundRepository.findByKey(
+      data.program,
+      data.call,
+    )
 
     if (fundAlreadyExists) {
       throw new Error('Fomento already exists')

@@ -4,7 +4,7 @@ import { IFundRepository } from '../FundRepository'
 export class InMemoryRepositoryCreateFund implements IFundRepository {
   private localDbForTests: Fund[] = []
 
-  async findByTitle(title: string): Promise<Fund> {
+  async findByKey(title: string): Promise<Fund> {
     const fomento = this.localDbForTests.find(
       (fomento) => fomento.title === title,
     )

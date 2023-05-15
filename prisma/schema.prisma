@@ -45,6 +45,7 @@ model Fund {
   status                String
   lastRelease           String
   observation           String?
+  key                   String          @unique
 
   @@map("fund")
 }

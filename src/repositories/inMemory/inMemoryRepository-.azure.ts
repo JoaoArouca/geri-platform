@@ -5,10 +5,24 @@ import { IFundRepository } from '../FundRepository'
 export class InMemoryRepositoryAzure implements IFundRepository {
   private prisma = new PrismaClient()
 
-  async findByTitle(title: string): Promise<Fund> {
-    const fund = await this.prisma.fund.findUnique({ where: { title } })
+  async findByKey(
+    program: string | null,
+    call: string | null,
+  ): Promise<boolean> {
+    if (!program) {
+      program = ''
+    }
 
-    return fund as Fund
+    const key = program.concat(call === null ? '' : call)
+    const fund = await this.prisma.fund.findUnique({
+      where: { key },
+    })
+
+    if (fund === null) {
+      return false
+    }
+
+    return true
   }
 
   async save(fund: Fund): Promise<void> {
